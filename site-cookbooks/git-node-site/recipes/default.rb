@@ -13,15 +13,16 @@ git "#{node.gitnodesite.web_root}" do
 end
 
 # install nodejs to run the application we just downloaded
-apt_package "nodejs" do
+package "nodejs" do
 	action :install
 end
-apt_package "npm" do
+
+package "npm" do
 	action :install
 end
 
 # npm seems to need g++/c++/cxx for compilation/make-ing of npm packages
-apt_package "build-essential" do
+package "build-essential" do
 	action :install
 end
 
